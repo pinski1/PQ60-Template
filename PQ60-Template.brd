@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.0005" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -140,34 +140,35 @@
 </layers>
 <board>
 <plain>
+<text x="8.59125" y="1.9125" size="1.27" layer="1" font="vector" ratio="12" align="center">Top</text>
+<text x="8.51475" y="1.9125" size="1.27" layer="16" font="vector" ratio="12" rot="MR0" align="center">Bot</text>
 </plain>
 <libraries>
 <library name="general">
 <packages>
-<package name="PQ60_NOPINS">
-<hole x="3" y="3" drill="3"/>
-<hole x="3" y="41" drill="3"/>
-<hole x="41" y="41" drill="3"/>
-<hole x="41" y="3" drill="3"/>
-<wire x1="3" y1="44" x2="41" y2="44" width="0" layer="20"/>
-<wire x1="41" y1="44" x2="44" y2="41" width="0" layer="20" curve="-90"/>
-<wire x1="44" y1="41" x2="44" y2="3" width="0" layer="20"/>
-<wire x1="44" y1="3" x2="41" y2="0" width="0" layer="20" curve="-90"/>
-<wire x1="41" y1="0" x2="3" y2="0" width="0" layer="20"/>
+<package name="PQ60_PINS">
+<wire x1="3" y1="42" x2="39" y2="42" width="0" layer="20"/>
+<wire x1="39" y1="42" x2="42" y2="39" width="0" layer="20" curve="-90"/>
+<wire x1="42" y1="39" x2="42" y2="3" width="0" layer="20"/>
+<wire x1="42" y1="3" x2="39" y2="0" width="0" layer="20" curve="-90"/>
+<wire x1="39" y1="0" x2="3" y2="0" width="0" layer="20"/>
 <wire x1="3" y1="0" x2="0" y2="3" width="0" layer="20" curve="-90"/>
-<wire x1="0" y1="3" x2="0" y2="41" width="0" layer="20"/>
-<wire x1="0" y1="41" x2="3" y2="44" width="0" layer="20" curve="-90"/>
+<wire x1="0" y1="3" x2="0" y2="39" width="0" layer="20"/>
+<wire x1="0" y1="39" x2="3" y2="42" width="0" layer="20" curve="-90"/>
 <circle x="3" y="3" radius="3" width="0" layer="41"/>
-<circle x="41" y="41" radius="3" width="0" layer="42"/>
-<circle x="41" y="3" radius="3" width="0" layer="41"/>
-<circle x="3" y="41" radius="3" width="0" layer="42"/>
-<wire x1="22" y1="6" x2="22" y2="8" width="0.127" layer="49"/>
-<wire x1="21" y1="7" x2="23" y2="7" width="0.127" layer="49"/>
-<circle x="3" y="41" radius="3" width="0" layer="41"/>
-<circle x="3" y="41" radius="3" width="0" layer="41"/>
-<circle x="41" y="41" radius="3" width="0" layer="41"/>
-<circle x="41" y="3" radius="3" width="0" layer="42"/>
+<circle x="39" y="39" radius="3" width="0" layer="42"/>
+<circle x="39" y="3" radius="3" width="0" layer="41"/>
+<circle x="3" y="39" radius="3" width="0" layer="42"/>
+<wire x1="21" y1="6.5" x2="21" y2="7.5" width="0.127" layer="49"/>
+<wire x1="20.5" y1="7" x2="21.5" y2="7" width="0.127" layer="49"/>
+<circle x="3" y="39" radius="3" width="0" layer="41"/>
+<circle x="39" y="39" radius="3" width="0" layer="41"/>
+<circle x="39" y="3" radius="3" width="0" layer="42"/>
 <circle x="3" y="3" radius="3" width="0" layer="42"/>
+<pad name="1" x="3" y="3" drill="2" diameter="5"/>
+<pad name="2" x="3" y="39" drill="2" diameter="5"/>
+<pad name="3" x="39" y="39" drill="2" diameter="5"/>
+<pad name="4" x="39" y="3" drill="2" diameter="5"/>
 </package>
 </packages>
 </library>
@@ -492,365 +493,539 @@
 </pass>
 </autorouter>
 <elements>
-<element name="B1" library="general" package="PQ60_NOPINS" value="PQ60-NOPINS" x="0" y="0"/>
-<element name="X1-TOP" library="PQ60" package="FX8C-60P-SV" value="FX8C-60P-SV" x="22" y="7" rot="R180"/>
-<element name="X1-BOT" library="PQ60" package="FX8C-60S-SV" value="FX8C-60S-SV" x="22" y="7" rot="MR0"/>
+<element name="X1-TOP" library="PQ60" package="FX8C-60P-SV" value="FX8C-60P-SV" x="21" y="7" rot="R180">
+<attribute name="OC_FARNELL" value="unknown" x="21" y="7" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MF" value="" x="21" y="7" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="21" y="7" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="X1-BOT" library="PQ60" package="FX8C-60S-SV" value="FX8C-60S-SV" x="21" y="7" rot="MR0">
+<attribute name="OC_FARNELL" value="unknown" x="21" y="7" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="MF" value="" x="21" y="7" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="MPN" value="" x="21" y="7" size="1.778" layer="28" rot="MR0" display="off"/>
+</element>
+<element name="B1" library="general" package="PQ60_PINS" value="PQ60-PINS" x="0" y="0">
+<attribute name="OC_FARNELL" value="unknown" x="0" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="0" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="0" y="0" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
+<signal name="S$1">
+</signal>
 <signal name="GND">
 <polygon width="0.254" layer="1" rank="6">
-<vertex x="0" y="44"/>
-<vertex x="44" y="44"/>
-<vertex x="44" y="0"/>
+<vertex x="42" y="42"/>
+<vertex x="0" y="42"/>
 <vertex x="0" y="0"/>
+<vertex x="42" y="0"/>
 </polygon>
 <polygon width="0.254" layer="16" rank="6">
-<vertex x="0" y="44"/>
-<vertex x="44" y="44"/>
-<vertex x="44" y="0"/>
+<vertex x="42" y="42"/>
+<vertex x="0" y="42"/>
 <vertex x="0" y="0"/>
+<vertex x="42" y="0"/>
 </polygon>
+<via x="12.335" y="6.985" extent="1-16" drill="0.3302"/>
+<via x="29.48" y="6.985" extent="1-16" drill="0.3302"/>
 <polygon width="0.254" layer="16" thermals="no" rank="4">
-<vertex x="11.565" y="12.5175"/>
-<vertex x="31.5675" y="12.5175"/>
-<vertex x="31.5675" y="0.77"/>
-<vertex x="11.565" y="0.77"/>
+<vertex x="10.7475" y="11.7475"/>
+<vertex x="30.75" y="11.7475"/>
+<vertex x="30.75" y="0.9525"/>
+<vertex x="10.7475" y="0.9525"/>
 </polygon>
 <polygon width="0.254" layer="1" thermals="no" rank="4">
-<vertex x="11.565" y="12.5175"/>
-<vertex x="31.5675" y="12.5175"/>
-<vertex x="31.5675" y="0.77"/>
-<vertex x="11.565" y="0.77"/>
+<vertex x="10.7475" y="11.43"/>
+<vertex x="30.75" y="11.43"/>
+<vertex x="30.75" y="0.9525"/>
+<vertex x="10.7475" y="0.9525"/>
 </polygon>
-<via x="13.47" y="6.8025" extent="1-16" drill="0.3302"/>
-<via x="30.2975" y="6.8025" extent="1-16" drill="0.3302"/>
-<contactref element="X1-TOP" pad="1"/>
-<contactref element="X1-TOP" pad="3"/>
-<contactref element="X1-TOP" pad="12"/>
-<contactref element="X1-TOP" pad="14"/>
-<contactref element="X1-TOP" pad="16"/>
-<contactref element="X1-TOP" pad="18"/>
-<contactref element="X1-TOP" pad="22"/>
-<contactref element="X1-TOP" pad="26"/>
-<contactref element="X1-TOP" pad="30"/>
-<contactref element="X1-TOP" pad="33"/>
-<contactref element="X1-TOP" pad="37"/>
-<contactref element="X1-TOP" pad="41"/>
-<contactref element="X1-TOP" pad="44"/>
-<contactref element="X1-TOP" pad="46"/>
-<contactref element="X1-TOP" pad="48"/>
-<contactref element="X1-TOP" pad="49"/>
-<contactref element="X1-TOP" pad="57"/>
-<contactref element="X1-TOP" pad="59"/>
-<contactref element="X1-TOP" pad="5"/>
-<contactref element="X1-BOT" pad="1"/>
-<contactref element="X1-BOT" pad="3"/>
-<contactref element="X1-BOT" pad="12"/>
-<contactref element="X1-BOT" pad="14"/>
-<contactref element="X1-BOT" pad="16"/>
-<contactref element="X1-BOT" pad="18"/>
-<contactref element="X1-BOT" pad="22"/>
-<contactref element="X1-BOT" pad="26"/>
-<contactref element="X1-BOT" pad="30"/>
-<contactref element="X1-BOT" pad="33"/>
-<contactref element="X1-BOT" pad="37"/>
-<contactref element="X1-BOT" pad="41"/>
-<contactref element="X1-BOT" pad="44"/>
-<contactref element="X1-BOT" pad="46"/>
-<contactref element="X1-BOT" pad="48"/>
-<contactref element="X1-BOT" pad="49"/>
-<contactref element="X1-BOT" pad="57"/>
-<contactref element="X1-BOT" pad="59"/>
-<contactref element="X1-BOT" pad="5"/>
-</signal>
-<signal name="+3V3">
-<contactref element="X1-TOP" pad="50"/>
-<contactref element="X1-TOP" pad="51"/>
-<contactref element="X1-TOP" pad="52"/>
-<contactref element="X1-BOT" pad="50"/>
-<contactref element="X1-BOT" pad="51"/>
-<contactref element="X1-BOT" pad="52"/>
-<polygon width="0.1524" layer="16" thermals="no">
-<vertex x="24.6" y="2.54"/>
-<vertex x="26" y="2.54"/>
-<vertex x="26" y="6.035"/>
-<vertex x="24.6" y="6.035"/>
-</polygon>
-<polygon width="0.1524" layer="1" thermals="no">
-<vertex x="24.6" y="2.54"/>
-<vertex x="26" y="2.54"/>
-<vertex x="26" y="6.035"/>
-<vertex x="24.6" y="6.035"/>
-</polygon>
-<via x="24.9" y="2.855" extent="1-16" drill="0.3302"/>
-<via x="25.7" y="2.855" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="SPI_SCK">
-<contactref element="X1-TOP" pad="13"/>
-<contactref element="X1-BOT" pad="13"/>
-<wire x1="23.5" y1="9.225" x2="23.5" y2="10.9625" width="0.254" layer="1"/>
-<wire x1="23.5" y1="9.85" x2="23.5" y2="10.9625" width="0.254" layer="16"/>
-<via x="23.5" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="SPI_MOSI">
-<contactref element="X1-TOP" pad="17"/>
-<contactref element="X1-BOT" pad="17"/>
-<wire x1="21.1" y1="9.85" x2="21.1" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="21.1" y1="9.225" x2="21.1" y2="10.9625" width="0.254" layer="1"/>
-<via x="21.1" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="SPI_MISO">
+<via x="27" y="2.855" extent="1-16" drill="0.3302"/>
+<contactref element="X1-TOP" pad="23"/>
+<contactref element="X1-TOP" pad="24"/>
+<contactref element="X1-TOP" pad="8"/>
 <contactref element="X1-TOP" pad="15"/>
-<contactref element="X1-BOT" pad="15"/>
-<wire x1="22.3" y1="9.225" x2="22.3" y2="10.9625" width="0.254" layer="1"/>
-<wire x1="22.3" y1="9.85" x2="22.3" y2="10.9625" width="0.254" layer="16"/>
-<via x="22.3" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="I2C_SCL">
-<contactref element="X1-TOP" pad="2"/>
-<contactref element="X1-BOT" pad="2"/>
-<wire x1="30.1" y1="9.85" x2="30.1" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="30.1" y1="9.225" x2="30.1" y2="10.9625" width="0.254" layer="1"/>
-<via x="30.1" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="I2C_SDA">
+<contactref element="X1-TOP" pad="7"/>
+<contactref element="X1-TOP" pad="20"/>
+<contactref element="X1-TOP" pad="11"/>
+<contactref element="X1-TOP" pad="12"/>
+<contactref element="X1-TOP" pad="16"/>
+<contactref element="X1-TOP" pad="19"/>
+<contactref element="X1-TOP" pad="3"/>
 <contactref element="X1-TOP" pad="4"/>
+<contactref element="X1-TOP" pad="28"/>
+<contactref element="X1-TOP" pad="56"/>
+<contactref element="X1-TOP" pad="48"/>
+<contactref element="X1-TOP" pad="55"/>
+<contactref element="X1-TOP" pad="54"/>
+<contactref element="X1-TOP" pad="53"/>
+<contactref element="X1-TOP" pad="47"/>
+<contactref element="X1-TOP" pad="46"/>
+<contactref element="X1-TOP" pad="45"/>
+<contactref element="X1-BOT" pad="3"/>
 <contactref element="X1-BOT" pad="4"/>
-<wire x1="28.9" y1="9.85" x2="28.9" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="28.9" y1="9.225" x2="28.9" y2="10.9625" width="0.254" layer="1"/>
-<via x="28.9" y="10.9625" extent="1-16" drill="0.3302"/>
+<contactref element="X1-BOT" pad="7"/>
+<contactref element="X1-BOT" pad="8"/>
+<contactref element="X1-BOT" pad="11"/>
+<contactref element="X1-BOT" pad="12"/>
+<contactref element="X1-BOT" pad="15"/>
+<contactref element="X1-BOT" pad="16"/>
+<contactref element="X1-BOT" pad="19"/>
+<contactref element="X1-BOT" pad="20"/>
+<contactref element="X1-BOT" pad="23"/>
+<contactref element="X1-BOT" pad="24"/>
+<contactref element="X1-BOT" pad="28"/>
+<contactref element="X1-BOT" pad="56"/>
+<contactref element="X1-BOT" pad="48"/>
+<contactref element="X1-BOT" pad="55"/>
+<contactref element="X1-BOT" pad="54"/>
+<contactref element="X1-BOT" pad="53"/>
+<contactref element="X1-BOT" pad="47"/>
+<contactref element="X1-BOT" pad="46"/>
+<contactref element="X1-BOT" pad="45"/>
+<via x="25.8" y="2.855" extent="1-16" drill="0.3302"/>
+<via x="22.2" y="2.8575" extent="1-16" drill="0.3302"/>
+<via x="21" y="2.8575" extent="1-16" drill="0.3302"/>
+<via x="18.6" y="11.1125" extent="1-16" drill="0.3302"/>
+<via x="21" y="11.1125" extent="1-16" drill="0.3302"/>
+<via x="23.4" y="11.1125" extent="1-16" drill="0.3302"/>
+<via x="25.8" y="11.1125" extent="1-16" drill="0.3302"/>
+<via x="28.2" y="11.1125" extent="1-16" drill="0.3302"/>
+<via x="16.2" y="11.1125" extent="1-16" drill="0.3302"/>
+<via x="30.6" y="11.1125" extent="1-16" drill="0.3302"/>
 </signal>
 <signal name="!RST">
-<contactref element="X1-TOP" pad="45"/>
-<contactref element="X1-BOT" pad="45"/>
-<wire x1="21.7" y1="4.15" x2="21.7" y2="2.6725" width="0.254" layer="16"/>
-<wire x1="21.7" y1="4.775" x2="21.7" y2="2.6725" width="0.254" layer="1"/>
-<via x="21.7" y="2.6725" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="VBUS">
-<contactref element="X1-TOP" pad="53"/>
-<contactref element="X1-TOP" pad="54"/>
-<contactref element="X1-TOP" pad="55"/>
-<contactref element="X1-BOT" pad="53"/>
-<contactref element="X1-BOT" pad="54"/>
-<contactref element="X1-BOT" pad="55"/>
-<polygon width="0.1524" layer="16" thermals="no">
-<vertex x="26.4" y="6.035"/>
-<vertex x="26.4" y="2.54"/>
-<vertex x="27.8" y="2.54"/>
-<vertex x="27.8" y="6.035"/>
-</polygon>
-<polygon width="0.1524" layer="1" thermals="no">
-<vertex x="26.4" y="6.035"/>
-<vertex x="26.4" y="2.54"/>
-<vertex x="27.8" y="2.54"/>
-<vertex x="27.8" y="6.035"/>
-</polygon>
-<via x="26.7" y="2.855" extent="1-16" drill="0.3302"/>
-<via x="27.5" y="2.855" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="USB_N">
-<contactref element="X1-TOP" pad="58"/>
-<contactref element="X1-BOT" pad="58"/>
-<wire x1="29.5" y1="4.15" x2="29.5" y2="2.6725" width="0.1524" layer="16"/>
-<wire x1="29.5" y1="4.775" x2="29.5" y2="2.6725" width="0.1524" layer="1"/>
-<via x="29.5" y="2.6725" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="USB_P">
-<contactref element="X1-TOP" pad="60"/>
-<contactref element="X1-BOT" pad="60"/>
-<wire x1="30.7" y1="4.775" x2="30.7" y2="2.6725" width="0.1524" layer="1"/>
-<wire x1="30.7" y1="4.15" x2="30.7" y2="2.6725" width="0.1524" layer="16"/>
-<via x="30.7" y="2.6725" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="SPI_CS">
-<contactref element="X1-TOP" pad="47"/>
-<contactref element="X1-BOT" pad="47"/>
-<wire x1="22.9" y1="4.15" x2="22.9" y2="2.6725" width="0.254" layer="16"/>
-<wire x1="22.9" y1="4.775" x2="22.9" y2="2.6725" width="0.254" layer="1"/>
-<via x="22.9" y="2.6725" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[14]">
-<contactref element="X1-TOP" pad="40"/>
-<contactref element="X1-BOT" pad="40"/>
-<wire x1="18.7" y1="4.775" x2="18.7" y2="2.6725" width="0.254" layer="1"/>
-<wire x1="18.7" y1="4.15" x2="18.7" y2="2.6725" width="0.254" layer="16"/>
-<via x="18.7" y="2.6725" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[13]">
-<contactref element="X1-TOP" pad="39"/>
-<contactref element="X1-BOT" pad="39"/>
-<wire x1="18.1" y1="4.15" x2="18.1" y2="2.07" width="0.254" layer="16"/>
-<wire x1="18.1" y1="4.775" x2="18.1" y2="2.07" width="0.254" layer="1"/>
-<via x="18.1" y="2.07" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[12]">
-<contactref element="X1-TOP" pad="38"/>
-<contactref element="X1-BOT" pad="38"/>
-<wire x1="17.5" y1="4.15" x2="17.5" y2="2.6725" width="0.254" layer="16"/>
-<wire x1="17.5" y1="4.775" x2="17.5" y2="2.6725" width="0.254" layer="1"/>
-<via x="17.5" y="2.6725" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[11]">
-<contactref element="X1-TOP" pad="32"/>
-<contactref element="X1-BOT" pad="32"/>
-<wire x1="13.9" y1="4.15" x2="13.9" y2="2.07" width="0.254" layer="16"/>
-<wire x1="13.9" y1="4.775" x2="13.9" y2="2.07" width="0.254" layer="1"/>
-<via x="13.9" y="2.07" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[10]">
-<contactref element="X1-TOP" pad="31"/>
-<contactref element="X1-BOT" pad="31"/>
-<wire x1="13.3" y1="4.15" x2="13.3" y2="2.6725" width="0.254" layer="16"/>
-<wire x1="13.3" y1="4.775" x2="13.3" y2="2.6725" width="0.254" layer="1"/>
-<via x="13.3" y="2.6725" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="VBUS_SW[1]">
-<contactref element="X1-TOP" pad="6"/>
-<contactref element="X1-BOT" pad="6"/>
-<wire x1="27.7" y1="9.225" x2="27.7" y2="11.565" width="0.254" layer="1"/>
-<wire x1="27.7" y1="9.85" x2="27.7" y2="11.565" width="0.254" layer="16"/>
-<via x="27.7" y="11.565" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="VBUS_SW[2]">
-<contactref element="X1-TOP" pad="7"/>
-<contactref element="X1-BOT" pad="7"/>
-<wire x1="27.1" y1="9.85" x2="27.1" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="27.1" y1="9.225" x2="27.1" y2="10.9625" width="0.254" layer="1"/>
-<via x="27.1" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="VBUS_SW[3]">
-<contactref element="X1-TOP" pad="8"/>
-<contactref element="X1-BOT" pad="8"/>
-<wire x1="26.5" y1="9.85" x2="26.5" y2="11.565" width="0.254" layer="16"/>
-<wire x1="26.5" y1="9.225" x2="26.5" y2="11.565" width="0.254" layer="1"/>
-<via x="26.5" y="11.565" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="+3V3_SW[2]">
-<contactref element="X1-TOP" pad="10"/>
-<contactref element="X1-BOT" pad="10"/>
-<wire x1="25.3" y1="9.85" x2="25.3" y2="11.565" width="0.254" layer="16"/>
-<wire x1="25.3" y1="9.225" x2="25.3" y2="11.565" width="0.254" layer="1"/>
-<via x="25.3" y="11.565" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="+3V3_SW[1]">
-<contactref element="X1-TOP" pad="9"/>
-<contactref element="X1-BOT" pad="9"/>
-<wire x1="25.9" y1="9.225" x2="25.9" y2="10.9625" width="0.254" layer="1"/>
-<wire x1="25.9" y1="9.85" x2="25.9" y2="10.9625" width="0.254" layer="16"/>
-<via x="25.9" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[1]">
-<contactref element="X1-TOP" pad="19"/>
-<contactref element="X1-BOT" pad="19"/>
-<wire x1="19.9" y1="9.85" x2="19.9" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="19.9" y1="9.225" x2="19.9" y2="10.9625" width="0.254" layer="1"/>
-<via x="19.9" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[2]">
-<contactref element="X1-TOP" pad="20"/>
-<contactref element="X1-BOT" pad="20"/>
-<wire x1="19.3" y1="9.225" x2="19.3" y2="11.565" width="0.254" layer="1"/>
-<wire x1="19.3" y1="9.85" x2="19.3" y2="11.565" width="0.254" layer="16"/>
-<via x="19.3" y="11.565" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[3]">
-<contactref element="X1-TOP" pad="21"/>
-<contactref element="X1-BOT" pad="21"/>
-<wire x1="18.7" y1="9.85" x2="18.7" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="18.7" y1="9.225" x2="18.7" y2="10.9625" width="0.254" layer="1"/>
-<via x="18.7" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[4]">
-<contactref element="X1-TOP" pad="23"/>
-<contactref element="X1-BOT" pad="23"/>
-<wire x1="17.5" y1="9.225" x2="17.5" y2="10.9625" width="0.254" layer="1"/>
-<wire x1="17.5" y1="9.85" x2="17.5" y2="10.9625" width="0.254" layer="16"/>
-<via x="17.5" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[5]">
-<contactref element="X1-TOP" pad="24"/>
-<contactref element="X1-BOT" pad="24"/>
-<wire x1="16.9" y1="9.85" x2="16.9" y2="11.565" width="0.254" layer="16"/>
-<wire x1="16.9" y1="9.225" x2="16.9" y2="11.565" width="0.254" layer="1"/>
-<via x="16.9" y="11.565" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[6]">
-<contactref element="X1-TOP" pad="25"/>
-<contactref element="X1-BOT" pad="25"/>
-<wire x1="16.3" y1="9.85" x2="16.3" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="16.3" y1="9.225" x2="16.3" y2="10.9625" width="0.254" layer="1"/>
-<via x="16.3" y="10.9625" extent="1-16" drill="0.3302"/>
-</signal>
-<signal name="GPIO[7]">
 <contactref element="X1-TOP" pad="27"/>
 <contactref element="X1-BOT" pad="27"/>
-<wire x1="15.1" y1="9.85" x2="15.1" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="15.1" y1="9.225" x2="15.1" y2="10.9625" width="0.254" layer="1"/>
-<via x="15.1" y="10.9625" extent="1-16" drill="0.3302"/>
+<wire x1="14.1" y1="9.85" x2="14.1" y2="11.1125" width="0.254" layer="16"/>
+<via x="14.1" y="11.1125" extent="1-16" drill="0.3302"/>
+<wire x1="14.1" y1="11.1125" x2="14.1" y2="9.225" width="0.254" layer="1"/>
+</signal>
+<signal name="PRO1">
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="27.75" y="6"/>
+<vertex x="29.85" y="6"/>
+<vertex x="29.85" y="2.54"/>
+<vertex x="27.75" y="2.54"/>
+</polygon>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="27.75" y="6"/>
+<vertex x="29.85" y="6"/>
+<vertex x="29.85" y="2.54"/>
+<vertex x="27.75" y="2.54"/>
+</polygon>
+<via x="28.2" y="2.855" extent="1-16" drill="0.3302"/>
+<via x="29.4" y="2.855" extent="1-16" drill="0.3302"/>
+<contactref element="X1-TOP" pad="57"/>
+<contactref element="X1-TOP" pad="59"/>
+<contactref element="X1-TOP" pad="58"/>
+<contactref element="X1-TOP" pad="60"/>
+<contactref element="X1-BOT" pad="57"/>
+<contactref element="X1-BOT" pad="59"/>
+<contactref element="X1-BOT" pad="58"/>
+<contactref element="X1-BOT" pad="60"/>
+<wire x1="29.4025" y1="2.8575" x2="29.4" y2="2.855" width="0.4064" layer="1"/>
+</signal>
+<signal name="VBAT">
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="22.96" y="6"/>
+<vertex x="25.05" y="6"/>
+<vertex x="25.05" y="2.54"/>
+<vertex x="22.96" y="2.54"/>
+</polygon>
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="22.96" y="6"/>
+<vertex x="25.05" y="6"/>
+<vertex x="25.05" y="2.54"/>
+<vertex x="22.96" y="2.54"/>
+</polygon>
+<contactref element="X1-BOT" pad="49"/>
+<contactref element="X1-BOT" pad="52"/>
+<contactref element="X1-BOT" pad="51"/>
+<contactref element="X1-BOT" pad="50"/>
+<via x="23.4" y="2.855" extent="1-16" drill="0.3302"/>
+<via x="24.6" y="2.855" extent="1-16" drill="0.3302"/>
+<contactref element="X1-TOP" pad="49"/>
+<contactref element="X1-TOP" pad="52"/>
+<contactref element="X1-TOP" pad="51"/>
+<contactref element="X1-TOP" pad="50"/>
+</signal>
+<signal name="VSYS_SW">
+</signal>
+<signal name="SOLAR[1..2]">
+</signal>
+<signal name="S$2">
+</signal>
+<signal name="SOLAR[3..4]">
+</signal>
+<signal name="THM">
+</signal>
+<signal name="S$22">
+</signal>
+<signal name="S$27">
+</signal>
+<signal name="S$23">
+</signal>
+<signal name="+3V3_UNPRO">
+</signal>
+<signal name="MPPT1:SW">
+</signal>
+<signal name="MPPT2:SW">
+</signal>
+<signal name="MPPT1:AUX">
+</signal>
+<signal name="MPPT2:AUX">
+</signal>
+<signal name="MPPT1:FB">
+</signal>
+<signal name="MPPT2:FB">
+</signal>
+<signal name="MPPT1:MPPC">
+</signal>
+<signal name="MPPT2:MPPC">
+</signal>
+<signal name="MPPT1:LDO">
+</signal>
+<signal name="MPPT2:LDO">
+</signal>
+<signal name="BMS1:BATT_PROG">
+</signal>
+<signal name="BMS1:VL">
+</signal>
+<signal name="I2C_SCL">
+<contactref element="X1-BOT" pad="29"/>
+<wire x1="12.9" y1="9.85" x2="12.9" y2="11.1125" width="0.254" layer="16"/>
+<via x="12.9" y="11.1125" extent="1-16" drill="0.3302"/>
+<contactref element="X1-TOP" pad="29"/>
+<wire x1="12.9" y1="11.1125" x2="12.9" y2="9.225" width="0.254" layer="1"/>
+</signal>
+<signal name="I2C_SDA">
+<contactref element="X1-TOP" pad="30"/>
+<contactref element="X1-BOT" pad="30"/>
+<via x="11.9825" y="11.1125" extent="1-16" drill="0.3302"/>
+<wire x1="12.3" y1="9.85" x2="12.3" y2="10.795" width="0.254" layer="16"/>
+<wire x1="12.3" y1="10.795" x2="11.9825" y2="11.1125" width="0.254" layer="16"/>
+<wire x1="12.3" y1="9.225" x2="12.3" y2="10.795" width="0.254" layer="1"/>
+<wire x1="12.3" y1="10.795" x2="11.9825" y2="11.1125" width="0.254" layer="1"/>
+</signal>
+<signal name="GPIO[0]">
+<contactref element="X1-TOP" pad="25"/>
+<contactref element="X1-BOT" pad="25"/>
+<wire x1="15.3" y1="9.225" x2="15.3" y2="11.1125" width="0.254" layer="1"/>
+<via x="15.3" y="11.1125" extent="1-16" drill="0.3302"/>
+<wire x1="15.3" y1="11.1125" x2="15.3" y2="9.85" width="0.254" layer="16"/>
+</signal>
+<signal name="GPIO[1]">
+<contactref element="X1-TOP" pad="26"/>
+<contactref element="X1-BOT" pad="26"/>
+<wire x1="14.7" y1="9.225" x2="14.7" y2="11.7475" width="0.254" layer="1"/>
+<via x="14.7" y="11.7475" extent="1-16" drill="0.3302"/>
+<wire x1="14.7" y1="11.7475" x2="14.7" y2="9.85" width="0.254" layer="16"/>
+</signal>
+<signal name="GPIO[12]">
+<contactref element="X1-TOP" pad="44"/>
+<contactref element="X1-BOT" pad="44"/>
+<wire x1="20.1" y1="4.775" x2="20.1" y2="2.2225" width="0.254" layer="1"/>
+<via x="20.1" y="2.2225" extent="1-16" drill="0.3302"/>
+<wire x1="20.1" y1="2.2225" x2="20.1" y2="4.15" width="0.254" layer="16"/>
+</signal>
+<signal name="GPIO[11]">
+<contactref element="X1-TOP" pad="43"/>
+<contactref element="X1-BOT" pad="43"/>
+<wire x1="19.5" y1="4.775" x2="19.5" y2="2.8575" width="0.254" layer="1"/>
+<via x="19.5" y="2.8575" extent="1-16" drill="0.3302"/>
+<wire x1="19.5" y1="2.8575" x2="19.5" y2="4.15" width="0.254" layer="16"/>
+</signal>
+<signal name="GPIO[10]">
+<contactref element="X1-TOP" pad="42"/>
+<contactref element="X1-BOT" pad="42"/>
+<wire x1="18.9" y1="4.15" x2="18.9" y2="2.2225" width="0.254" layer="16"/>
+<via x="18.9" y="2.2225" extent="1-16" drill="0.3302"/>
+<wire x1="18.9" y1="2.2225" x2="18.9" y2="4.775" width="0.254" layer="1"/>
+</signal>
+<signal name="SPI_SCK">
+<contactref element="X1-TOP" pad="33"/>
+<contactref element="X1-BOT" pad="33"/>
+<wire x1="13.5" y1="4.775" x2="13.5" y2="2.8575" width="0.254" layer="1"/>
+<via x="13.5" y="2.8575" extent="1-16" drill="0.3302"/>
+<wire x1="13.5" y1="2.8575" x2="13.5" y2="4.15" width="0.254" layer="16"/>
+</signal>
+<signal name="SPI_MISO">
+<contactref element="X1-TOP" pad="32"/>
+<contactref element="X1-BOT" pad="32"/>
+<wire x1="12.9" y1="4.775" x2="12.9" y2="2.2225" width="0.254" layer="1"/>
+<via x="12.9" y="2.2225" extent="1-16" drill="0.3302"/>
+<wire x1="12.9" y1="2.2225" x2="12.9" y2="4.15" width="0.254" layer="16"/>
+</signal>
+<signal name="SPI_MOSI">
+<contactref element="X1-TOP" pad="31"/>
+<contactref element="X1-BOT" pad="31"/>
+<via x="12.3" y="2.8575" extent="1-16" drill="0.3302"/>
+<wire x1="12.3" y1="4.775" x2="12.3" y2="2.8575" width="0.254" layer="1"/>
+<wire x1="12.3" y1="4.15" x2="12.3" y2="2.8575" width="0.254" layer="16"/>
+</signal>
+<signal name="GPIO[2]">
+<contactref element="X1-TOP" pad="34"/>
+<contactref element="X1-BOT" pad="34"/>
+<wire x1="14.1" y1="4.775" x2="14.1" y2="2.2225" width="0.254" layer="1"/>
+<via x="14.1" y="2.2225" extent="1-16" drill="0.3302"/>
+<wire x1="14.1" y1="2.2225" x2="14.1" y2="4.15" width="0.254" layer="16"/>
+</signal>
+<signal name="GPIO[3]">
+<contactref element="X1-TOP" pad="35"/>
+<contactref element="X1-BOT" pad="35"/>
+<wire x1="14.7" y1="4.15" x2="14.7" y2="2.8575" width="0.254" layer="16"/>
+<via x="14.7" y="2.8575" extent="1-16" drill="0.3302"/>
+<wire x1="14.7" y1="2.8575" x2="14.7" y2="4.775" width="0.254" layer="1"/>
+</signal>
+<signal name="GPIO[4]">
+<contactref element="X1-TOP" pad="36"/>
+<contactref element="X1-BOT" pad="36"/>
+<wire x1="15.3" y1="4.775" x2="15.3" y2="2.2225" width="0.254" layer="1"/>
+<via x="15.3" y="2.2225" extent="1-16" drill="0.3302"/>
+<wire x1="15.3" y1="2.2225" x2="15.3" y2="4.15" width="0.254" layer="16"/>
+</signal>
+<signal name="GPIO[5]">
+<contactref element="X1-TOP" pad="37"/>
+<contactref element="X1-BOT" pad="37"/>
+<wire x1="15.9" y1="4.15" x2="15.9" y2="2.8575" width="0.254" layer="16"/>
+<via x="15.9" y="2.8575" extent="1-16" drill="0.3302"/>
+<wire x1="15.9" y1="2.8575" x2="15.9" y2="4.775" width="0.254" layer="1"/>
+</signal>
+<signal name="GPIO[6]">
+<contactref element="X1-TOP" pad="38"/>
+<contactref element="X1-BOT" pad="38"/>
+<wire x1="16.5" y1="4.15" x2="16.5" y2="2.2225" width="0.254" layer="16"/>
+<via x="16.5" y="2.2225" extent="1-16" drill="0.3302"/>
+<wire x1="16.5" y1="2.2225" x2="16.5" y2="4.775" width="0.254" layer="1"/>
+</signal>
+<signal name="GPIO[7]">
+<contactref element="X1-TOP" pad="39"/>
+<contactref element="X1-BOT" pad="39"/>
+<wire x1="17.1" y1="4.775" x2="17.1" y2="2.86" width="0.254" layer="1"/>
+<wire x1="17.1" y1="2.86" x2="17.0975" y2="2.8575" width="0.254" layer="1" curve="-90"/>
+<via x="17.0975" y="2.8575" extent="1-16" drill="0.3302"/>
+<wire x1="17.0975" y1="2.8575" x2="17.0975" y2="4.1475" width="0.254" layer="16"/>
+<wire x1="17.0975" y1="4.1475" x2="17.1" y2="4.15" width="0.254" layer="16" curve="-90"/>
 </signal>
 <signal name="GPIO[8]">
-<contactref element="X1-TOP" pad="28"/>
-<contactref element="X1-BOT" pad="28"/>
-<wire x1="14.5" y1="9.225" x2="14.5" y2="11.565" width="0.254" layer="1"/>
-<wire x1="14.5" y1="9.85" x2="14.5" y2="11.565" width="0.254" layer="16"/>
-<via x="14.5" y="11.565" extent="1-16" drill="0.3302"/>
+<contactref element="X1-TOP" pad="40"/>
+<contactref element="X1-BOT" pad="40"/>
+<wire x1="17.7" y1="4.15" x2="17.7" y2="2.2225" width="0.254" layer="16"/>
+<via x="17.7" y="2.2225" extent="1-16" drill="0.3302"/>
+<wire x1="17.7" y1="2.2225" x2="17.7" y2="4.775" width="0.254" layer="1"/>
 </signal>
 <signal name="GPIO[9]">
-<contactref element="X1-TOP" pad="29"/>
-<contactref element="X1-BOT" pad="29"/>
-<wire x1="13.9" y1="9.85" x2="13.9" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="13.9" y1="9.225" x2="13.9" y2="10.9625" width="0.254" layer="1"/>
-<via x="13.9" y="10.9625" extent="1-16" drill="0.3302"/>
+<contactref element="X1-TOP" pad="41"/>
+<contactref element="X1-BOT" pad="41"/>
+<wire x1="18.3" y1="4.775" x2="18.3" y2="2.8575" width="0.254" layer="1"/>
+<via x="18.3" y="2.8575" extent="1-16" drill="0.3302"/>
+<wire x1="18.3" y1="2.8575" x2="18.3" y2="4.15" width="0.254" layer="16"/>
+</signal>
+<signal name="VBAT_SW[3]">
+<contactref element="X1-TOP" pad="21"/>
+<contactref element="X1-TOP" pad="22"/>
+<contactref element="X1-BOT" pad="22"/>
+<contactref element="X1-BOT" pad="21"/>
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="16.95" y="11.5"/>
+<vertex x="17.85" y="11.5"/>
+<vertex x="17.85" y="8"/>
+<vertex x="16.95" y="8"/>
+</polygon>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="16.95" y="11.5"/>
+<vertex x="17.85" y="11.5"/>
+<vertex x="17.85" y="8"/>
+<vertex x="16.95" y="8"/>
+</polygon>
+<via x="17.4" y="11.1125" extent="1-16" drill="0.3302"/>
+</signal>
+<signal name="VBAT_SW[2]">
+<contactref element="X1-TOP" pad="17"/>
+<contactref element="X1-TOP" pad="18"/>
+<contactref element="X1-BOT" pad="18"/>
+<contactref element="X1-BOT" pad="17"/>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="19.35" y="11.5"/>
+<vertex x="20.25" y="11.5"/>
+<vertex x="20.25" y="8"/>
+<vertex x="19.35" y="8"/>
+</polygon>
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="19.35" y="11.5"/>
+<vertex x="20.25" y="11.5"/>
+<vertex x="20.25" y="8"/>
+<vertex x="19.35" y="8"/>
+</polygon>
+<via x="19.8" y="11.1125" extent="1-16" drill="0.3302"/>
+</signal>
+<signal name="VBAT_SW[1]">
+<contactref element="X1-TOP" pad="14"/>
+<contactref element="X1-TOP" pad="13"/>
+<contactref element="X1-BOT" pad="13"/>
+<contactref element="X1-BOT" pad="14"/>
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="21.75" y="11.5"/>
+<vertex x="22.65" y="11.5"/>
+<vertex x="22.65" y="8"/>
+<vertex x="21.75" y="8"/>
+</polygon>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="21.75" y="11.5"/>
+<vertex x="22.65" y="11.5"/>
+<vertex x="22.65" y="8"/>
+<vertex x="21.75" y="8"/>
+</polygon>
+<via x="22.2" y="11.1125" extent="1-16" drill="0.3302"/>
+</signal>
+<signal name="+3V3_SW[2]">
+<contactref element="X1-TOP" pad="5"/>
+<contactref element="X1-TOP" pad="6"/>
+<contactref element="X1-BOT" pad="5"/>
+<contactref element="X1-BOT" pad="6"/>
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="26.55" y="11.5"/>
+<vertex x="27.45" y="11.5"/>
+<vertex x="27.45" y="8"/>
+<vertex x="26.55" y="8"/>
+</polygon>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="26.55" y="11.5"/>
+<vertex x="27.45" y="11.5"/>
+<vertex x="27.45" y="8"/>
+<vertex x="26.55" y="8"/>
+</polygon>
+<via x="27" y="11.1125" extent="1-16" drill="0.3302"/>
+</signal>
+<signal name="+3V3_SW[1]">
+<contactref element="X1-TOP" pad="1"/>
+<contactref element="X1-TOP" pad="2"/>
+<contactref element="X1-BOT" pad="2"/>
+<contactref element="X1-BOT" pad="1"/>
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="28.95" y="11.5"/>
+<vertex x="29.85" y="11.5"/>
+<vertex x="29.85" y="8"/>
+<vertex x="28.95" y="8"/>
+</polygon>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="28.95" y="11.5"/>
+<vertex x="29.85" y="11.5"/>
+<vertex x="29.85" y="8"/>
+<vertex x="28.95" y="8"/>
+</polygon>
+<via x="29.4" y="11.1125" extent="1-16" drill="0.3302"/>
 </signal>
 <signal name="+3V3_SW[3]">
-<contactref element="X1-TOP" pad="11"/>
-<contactref element="X1-BOT" pad="11"/>
-<wire x1="24.7" y1="9.85" x2="24.7" y2="10.9625" width="0.254" layer="16"/>
-<wire x1="24.7" y1="9.225" x2="24.7" y2="10.9625" width="0.254" layer="1"/>
-<via x="24.7" y="10.9625" extent="1-16" drill="0.3302"/>
+<contactref element="X1-BOT" pad="10"/>
+<contactref element="X1-BOT" pad="9"/>
+<contactref element="X1-TOP" pad="10"/>
+<contactref element="X1-TOP" pad="9"/>
+<polygon width="0.1524" layer="1" thermals="no">
+<vertex x="24.15" y="11.5"/>
+<vertex x="25.05" y="11.5"/>
+<vertex x="25.05" y="8"/>
+<vertex x="24.15" y="8"/>
+</polygon>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="24.15" y="11.5"/>
+<vertex x="25.05" y="11.5"/>
+<vertex x="25.05" y="8"/>
+<vertex x="24.15" y="8"/>
+</polygon>
+<via x="24.6" y="11.1125" extent="1-16" drill="0.3302"/>
 </signal>
-<signal name="NC@56">
-<contactref element="X1-TOP" pad="56"/>
-<contactref element="X1-BOT" pad="56"/>
-<wire x1="28.3" y1="4.775" x2="28.3" y2="2.07" width="0.254" layer="1"/>
-<via x="28.3" y="2.07" extent="1-16" drill="0.3302"/>
-<wire x1="28.3" y1="2.07" x2="28.3" y2="4.15" width="0.254" layer="16"/>
+<signal name="V_BAT">
 </signal>
-<signal name="NC@43">
-<contactref element="X1-BOT" pad="43"/>
-<contactref element="X1-TOP" pad="43"/>
-<wire x1="20.5" y1="4.15" x2="20.5" y2="2.07" width="0.254" layer="16"/>
-<via x="20.5" y="2.07" extent="1-16" drill="0.3302"/>
-<wire x1="20.5" y1="2.07" x2="20.5" y2="4.775" width="0.254" layer="1"/>
+<signal name="RESET">
 </signal>
-<signal name="NC@42">
-<contactref element="X1-BOT" pad="42"/>
-<contactref element="X1-TOP" pad="42"/>
-<wire x1="19.9" y1="4.15" x2="19.9" y2="2.6725" width="0.254" layer="16"/>
-<via x="19.9" y="2.6725" extent="1-16" drill="0.3302"/>
-<wire x1="19.9" y1="2.6725" x2="19.9" y2="4.775" width="0.254" layer="1"/>
+<signal name="PROT1:I_LIM_SW2">
 </signal>
-<signal name="NC@36">
-<contactref element="X1-BOT" pad="36"/>
-<contactref element="X1-TOP" pad="36"/>
-<wire x1="16.3" y1="4.15" x2="16.3" y2="2.6725" width="0.254" layer="16"/>
-<via x="16.3" y="2.6725" extent="1-16" drill="0.3302"/>
-<wire x1="16.3" y1="2.6725" x2="16.3" y2="4.775" width="0.254" layer="1"/>
+<signal name="PROT1:I_LIM_SW3">
 </signal>
-<signal name="NC@35">
-<contactref element="X1-BOT" pad="35"/>
-<contactref element="X1-TOP" pad="35"/>
-<wire x1="15.7" y1="4.15" x2="15.7" y2="2.07" width="0.254" layer="16"/>
-<via x="15.7" y="2.07" extent="1-16" drill="0.3302"/>
-<wire x1="15.7" y1="2.07" x2="15.7" y2="4.775" width="0.254" layer="1"/>
+<signal name="S$11">
 </signal>
-<signal name="NC@34">
-<contactref element="X1-BOT" pad="34"/>
-<contactref element="X1-TOP" pad="34"/>
-<wire x1="15.1" y1="4.15" x2="15.1" y2="2.6725" width="0.254" layer="16"/>
-<via x="15.1" y="2.6725" extent="1-16" drill="0.3302"/>
-<wire x1="15.1" y1="2.6725" x2="15.1" y2="4.775" width="0.254" layer="1"/>
+<signal name="PROT1:IN_SEN">
+</signal>
+<signal name="PROT2:I_LIM_VCC">
+</signal>
+<signal name="S$13">
+</signal>
+<signal name="+3V3_SW[1]_EN">
+</signal>
+<signal name="S$14">
+</signal>
+<signal name="S$16">
+</signal>
+<signal name="+3V3_SW[3]_EN">
+</signal>
+<signal name="S$21">
+</signal>
+<signal name="+3V3_V_SEN">
+</signal>
+<signal name="S$18">
+</signal>
+<signal name="+3V3_I_SEN">
+</signal>
+<signal name="S$9">
+</signal>
+<signal name="S$12">
+</signal>
+<signal name="+3V3_SW[2]_!FAULT!">
+</signal>
+<signal name="S$15">
+</signal>
+<signal name="+3V3_SW[3]_!FAULT!">
+</signal>
+<signal name="VBAT_SW[1]_!FAULT!">
+</signal>
+<signal name="VBAT_SW[2]_!FAULT!">
+</signal>
+<signal name="VBAT_SW[3]_!FAULT!">
+</signal>
+<signal name="IDIODE_STAT">
+</signal>
+<signal name="S$25">
+</signal>
+<signal name="VSOL">
+</signal>
+<signal name="S$28">
+</signal>
+<signal name="S$26">
+</signal>
+<signal name="S_ARRAY_2">
+</signal>
+<signal name="S$29">
+</signal>
+<signal name="S$31">
+</signal>
+<signal name="S_ARRAY_1">
+</signal>
+<signal name="MPPT2:THM">
+</signal>
+<signal name="BMS_!PGD!">
+</signal>
+<signal name="N$4">
+</signal>
+<signal name="S$20">
+</signal>
+<signal name="VBAT_SW[2]_EN">
+</signal>
+<signal name="VBAT_SW[3]_EN">
+</signal>
+<signal name="VBAT_V_SEN">
+</signal>
+<signal name="S$19">
+</signal>
+<signal name="VBAT_I_SEN">
+</signal>
+<signal name="VSYS">
+</signal>
+<signal name="I2C_INT">
+</signal>
+<signal name="S$30">
+</signal>
+<signal name="MPPT_PGD">
 </signal>
 </signals>
 </board>
